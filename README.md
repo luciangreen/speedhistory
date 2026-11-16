@@ -7,7 +7,7 @@ the speed of each predicate across every commit. Each record is m(Commit, Predic
 ```prolog
 ?- use_module(prolog/speedhistory).
 ?- history([m(1, sort, 100), m(2, sort, 80), m(3, sort, 95)], sort, H).    % H = [1-100, 2-80, 3-95]
-?- regressions([m(1, sort, 100), m(2, sort, 80), m(3, sort, 95)], sort, 10, R).   % R = [3-(95 vs best 80)]
+?- regressions([m(1, sort, 100), m(2, sort, 80), m(3, sort, 95)], sort, 10, R).   % R = [3-slower(95, best(80))]
 ?- best([m(1, sort, 100), m(2, sort, 80)], sort, B).                         % B = 2-80
 ```
 
